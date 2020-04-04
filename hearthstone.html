@@ -329,18 +329,22 @@
 			hp_player=player.hp+player1.hp+player2.hp;
 			
 			if (hp_enemy<hp_player) {
+				let hide = function(){
 				enemy_d.style.opacity = 0;
 				enemy1_d.style.opacity = 0;
 				enemy2_d.style.opacity = 0;
-				alert(enemy.name+ ' проиграл')
+				alert(enemy.name+ ' проиграл')}
+				setTimeout(hide,2000)
 			}
 
 			if (hp_enemy>hp_player) {
+				let hider = function(){
 				player_d.style.opacity = 0;
 				player1_d.style.opacity = 0;
 				
 				player2_d.style.opacity = 0;
-				alert(player.name+ ' проиграл')
+				alert(player.name+ ' проиграл')}
+				setTimeout(hider,2000)
 			}
 			
 
