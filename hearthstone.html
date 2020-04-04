@@ -198,7 +198,7 @@
 		let getRandomImg = function(){
 			let img=Math.random()*8
 			round=Math.round(img)
-			return "url("round+".png)";
+			return "url("+round+".png)";
 		}
 
 
@@ -329,10 +329,17 @@
 			hp_player=player.hp+player1.hp+player2.hp;
 			
 			if (hp_enemy<hp_player) {
+				enemy_d.style.opacity = 0;
+				enemy1_d.style.opacity = 0;
+				enemy2_d.style.opacity = 0;
 				alert(enemy.name+ ' проиграл')
 			}
 
 			if (hp_enemy>hp_player) {
+				player_d.style.opacity = 0;
+				player1_d.style.opacity = 0;
+				
+				player2_d.style.opacity = 0;
 				alert(player.name+ ' проиграл')
 			}
 			
