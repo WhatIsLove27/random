@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.enemy{
+			margin-top: 100px;
+			text-align:center;
+			height: 250px;
+			margin-left: auto; 
+			margin-right: auto
+		}
+		
+		.enemy1_d{
+			margin-top: 175px;
+			text-align:center;
+			height: 250px;
+
+		}
+		.enemy2_d{
+			margin-top: 175px;
+			text-align:center;
+			height: 250px;
+		}
+		.player_img{
+			width:175px;
+			height: 250px;
+			margin-left: auto;
+			margin-right: auto;
+			background-size: 100% 100%;
+			position: relative;
+			transition: 1s;
+
+		}
+		.player1_img{
+			width:175px;
+			height: 250px;
+			margin-left: 300px;
+			
+			background-size: 100% 100%;
+			position: relative;
+			transition: 1s;
+
+		}
+		.player2_img{
+			width:175px;
+			height: 250px;
+			margin-right: 300px;
+			
+			background-size: 100% 100%;
+			position: relative;
+			transition: 1s;
+
+		}
+		.enemy_img{
+			width:175px;
+			height: 250px;
+			margin-left: auto;
+			margin-right: auto;
+			background-size: 100% 100%;
+			position: relative;
+			transition: 1s;
+
+		}
+		.enemy1_img{
+			width:175px;
+			height: 250px;
+			margin-left: 300px;
+			
+			background-size: 100% 100%;
+			position: relative;
+			transition: 1s;
+
+		}
+		.enemy2_img{
+			width:175px;
+			height: 250px;
+			margin-right: 300px;
+			
+			background-size: 100% 100%;
+			position: relative;
+			transition: 1s;
+
+		}
+		
+		.player{
+			text-align: center;
+			height: 250px;
+			margin-top: 150px;
+			margin-left: auto;
+			margin-right: auto
+
+		}
+		.player1_d{
+			text-align: center;
+			height: 250px;
+			margin-top: 150px;
+
+		}
+		.player2_d{
+			text-align: center;
+			height: 250px;
+			margin-top: 150px;
+
+		}
+		.player_property{
+			position: absolute;
+			top:75%;
+
+
+		
+		
+
+
+		}
+		
+		.enemy_name{
+			color: white; font-family: Arial;
+		}
+		.player_name{
+			color: white; font-family: Arial
+		}
+	</style>
+</head>
+<body style="background-image: url(images/bg.jpg); background-size: 100% ">
+	<div style="display: flex">
+		<div class="enemy1_d" >
+			<div class="enemy1_img" >
+				<h2 class="enemy1_damage player_property" style="left: 10%;">0</h2>
+				<h2 class="enemy1_hp player_property" style="left: 82%;">0</h2>
+				
+			</div>
+			
+		</div>
+		<div class="enemy">
+			<h2 class="enemy_name"></h2>
+			<div class="enemy_img">
+				<h2 class="enemy_damage player_property" style="left: 10%;">0</h2>
+				<h2 class="enemy_hp player_property" style="left: 82%;">0</h2>
+			</div>	
+		</div>
+		<div class="enemy2_d" >
+			<div class="enemy2_img" >
+				<h2 class="enemy2_damage player_property" style="left: 10%;">0</h2>
+				<h2 class="enemy2_hp player_property" style="left: 82%;">0</h2>
+				
+			</div>
+			
+		</div>
+		
+		
+	</div>
+	<div style="display: flex">
+		<div class="player1_d" >
+			<div class="player1_img" >
+				<h2 class="player1_damage player_property" style="left: 10%;">0</h2>
+				<h2 class="player1_hp player_property" style="left: 82%;">0</h2>
+				
+			</div>
+			
+		</div>
+		<div class="player">
+			<div class="player_img">
+				<h2 class="player_damage player_property" style="left: 10%;">0</h2>
+				<h2 class="player_hp player_property" style="left: 82%;">0</h2>
+			</div>
+			<h2 class="player_name"></h2>
+		</div>
+		<div class="player2_d" >
+			<div class="player2_img" >
+				<h2 class="player2_damage player_property" style="left: 10%;">0</h2>
+				<h2 class="player2_hp player_property" style="left: 82%;">0</h2>
+				
+			</div>
+			
+		</div>
+		
+		
+	</div>
+	
+
+	<div class="player">
+		<div class="player_img">
+			<h2 class="player_damage player_property" style="left: 10%;">0</h2>
+			<h2 class="player_hp player_property" style="left: 82%;">0</h2>
+		</div>
+		<h2 class="player_name"></h2>
+	</div>
+	<script type="text/javascript">
+		let getRand =function(){
+			let rand = Math.random()*10;
+			let round= Math.round(rand);
+			return round
+		}
+		
+
+		let getRandomImg = function(){
+			let img=Math.random()*8
+			round=Math.round(img)
+			return "url(full-images/"+round+".png)";
+		}
+
+
+		let player = {
+			name: "игрок",
+			dmg: getRand(),
+			hp: getRand(),
+			img:getRandomImg()
+		}
+		let player1 = {
+			name: "игрок",
+			dmg: getRand(),
+			hp: getRand(),
+			img:getRandomImg()
+		}
+		let player2 = {
+			name: "игрок",
+			dmg: getRand(),
+			hp: getRand(),
+			img:getRandomImg()
+		}
+
+		let enemy = {
+			name: "враг",
+			dmg: getRand(),
+			hp: getRand(),
+			img: getRandomImg()
+		}
+		let enemy1 = {
+			
+			dmg: getRand(),
+			hp: getRand(),
+			img: getRandomImg()
+		}
+		let enemy2 = {
+			
+			dmg: getRand(),
+			hp: getRand(),
+			img: getRandomImg()
+		}
+//0
+		let enemy_d= document.querySelector('.enemy');
+		let player_d = document.querySelector('.player');
+
+		let enemy_name= document.querySelector('.enemy_name');
+		let player_name = document.querySelector('.player_name');
+			enemy_name.innerHTML = enemy.name;
+			player_name.innerHTML =player.name;
+
+		let enemy_img= document.querySelector('.enemy_img');
+		let player_img = document.querySelector('.player_img');
+			enemy_img.style.backgroundImage = enemy.img;
+			player_img.style.backgroundImage =player.img;
+
+		let enemy_hp= document.querySelector('.enemy_hp');
+		let player_hp = document.querySelector('.player_hp');
+			enemy_hp.innerHTML = enemy.hp;
+			player_hp.innerHTML =player.hp;
+		
+		let enemy_damage= document.querySelector('.enemy_damage');
+		let player_damage = document.querySelector('.player_damage');
+			enemy_damage.innerHTML = enemy.dmg;
+			player_damage.innerHTML =player.dmg;
+//1
+		let enemy1_d= document.querySelector('.enemy1_d');
+		let player1_d = document.querySelector('.player1_d');
+
+		
+		let enemy1_img= document.querySelector('.enemy1_img');
+		let player1_img = document.querySelector('.player1_img');
+			enemy1_img.style.backgroundImage = enemy1.img;
+			player1_img.style.backgroundImage =player1.img;
+
+		let enemy1_hp= document.querySelector('.enemy1_hp');
+		let player1_hp = document.querySelector('.player1_hp');
+			enemy1_hp.innerHTML = enemy1.hp;
+			player1_hp.innerHTML =player1.hp;
+		
+		let enemy1_damage= document.querySelector('.enemy1_damage');
+		let player1_damage = document.querySelector('.player1_damage');
+			enemy1_damage.innerHTML = enemy1.dmg;
+			player1_damage.innerHTML =player1.dmg;
+
+
+//2
+		let enemy2_d= document.querySelector('.enemy2_d');
+		let player2_d = document.querySelector('.player2_d');
+
+		
+		let enemy2_img= document.querySelector('.enemy2_img');
+		let player2_img = document.querySelector('.player2_img');
+			enemy2_img.style.backgroundImage = enemy2.img;
+			player2_img.style.backgroundImage =player2.img;
+
+		let enemy2_hp= document.querySelector('.enemy2_hp');
+		let player2_hp = document.querySelector('.player2_hp');
+			enemy2_hp.innerHTML = enemy2.hp;
+			player2_hp.innerHTML =player2.hp;
+		
+		let enemy2_damage= document.querySelector('.enemy2_damage');
+		let player2_damage = document.querySelector('.player2_damage');
+			enemy2_damage.innerHTML = enemy2.dmg;
+			player2_damage.innerHTML =player2.dmg;
+
+		let hp_enemy=0
+		let hp_player=0
+		let attack = function(){
+
+			player.hp=player.hp-enemy.dmg;
+			player_hp.innerHTML =player.hp
+
+			enemy.hp=enemy.hp-player.dmg;
+			enemy_hp.innerHTML =enemy.hp
+
+			player1.hp=player1.hp-enemy1.dmg;
+			player1_hp.innerHTML =player1.hp
+
+			enemy1.hp=enemy1.hp-player1.dmg;
+			enemy1_hp.innerHTML =enemy1.hp
+
+			player2.hp=player2.hp-enemy2.dmg;
+			player2_hp.innerHTML =player2.hp
+
+			enemy2.hp=enemy2.hp-player2.dmg;
+			enemy2_hp.innerHTML =enemy2.hp
+
+			hp_enemy=enemy.hp+enemy1.hp+enemy2.hp;
+			hp_player=player.hp+player1.hp+player2.hp;
+			
+			if (hp_enemy<hp_player) {
+				alert(enemy.name+ ' проиграл')
+			}
+
+			if (hp_enemy>hp_player) {
+				alert(player.name+ ' проиграл')
+			}
+			
+
+
+			
+
+				
+			
+				
+		}
+		setTimeout(attack,5000)
+		
+		
+
+
+
+		
+	</script>
+</body>
+</html>
